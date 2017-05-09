@@ -4,7 +4,7 @@ using System.Collections;
 public class Hover : MonoBehaviour {
 	
 	public float fMag = 10.0f;
-	public float impulseMag = 1.0f;
+	public float impulseMag = 1500.0f;
 	public float turn = 1.0f;
 
 	// Use this for initialization
@@ -33,18 +33,25 @@ public class Hover : MonoBehaviour {
 		Debug.DrawRay(rightFront, -transform.up, (hRightFront.distance < 1.0f)?Color.red:Color.black);
 		
 		// Suspension
-		if(hLeftRear.distance < 1.0f)
+		/*if(hLeftRear.distance < 1.0f)
 			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - hLeftRear.distance) * fMag * hLeftRear.normal, leftRear);
 		if(hRightRear.distance < 1.0f)
 			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - hRightRear.distance) * fMag * hRightRear.normal, rightRear);
 		if(hLeftFront.distance < 1.0f)
 			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - hLeftFront.distance) * fMag * hLeftFront.normal, leftFront);
 		if(hRightFront.distance < 1.0f)
-			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - hRightFront.distance) * fMag * hRightFront.normal, rightFront);
+			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - hRightFront.distance) * fMag * hRightFront.normal, rightFront);*/
 
 		//Impulse
-		if (hLeftFront.distance < 1.0f && hRightFront.distance < 1.0f)
-			GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
+		if (hLeftRear.distance < 1.0f && hRightRear.distance < 1.0f) {
+			if (Input.GetAxis ("Vertical") == 1) {
+				impulseMag = 1500.0f;
+				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
+			} else {
+				impulseMag = 800;
+				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
+			}
+		}
 
 		//Rotation
 		GetComponent<Rigidbody>().AddTorque(transform.up * turn * Input.GetAxis("Horizontal"));
