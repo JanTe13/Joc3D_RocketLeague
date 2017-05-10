@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,7 +42,7 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 9
@@ -90,8 +90,8 @@ MonoBehaviour:
     y: 0
     width: 310
     height: 454
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -206,7 +206,7 @@ MonoBehaviour:
     y: 0
     width: 1225
     height: 731
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 10
@@ -230,8 +230,8 @@ MonoBehaviour:
     y: 0
     width: 1225
     height: 454
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 11
 --- !u!114 &11
@@ -355,19 +355,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets
+  - Assets/Materials
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 21}
-    m_SelectedIDs: ba240000
-    m_LastClickedID: 9402
-    m_ExpandedIDs: 00000000ba240000a4250000b2250000122600002a260000822a0000ac320000ae320000b0320000b2320000b4320000b6320000b8320000ba320000bc320000be32000000ca9a3bffffff7f
+    m_SelectedIDs: d6250000
+    m_LastClickedID: 9686
+    m_ExpandedIDs: 00000000b82400008425000096250000d6250000ea250000183c00001a3c00001c3c00001e3c0000203c0000223c0000243c0000263c0000283c00002a3c00002c3c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -395,7 +395,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba240000a4250000b2250000122600002a260000822a0000ac320000ae320000b0320000b2320000b4320000b6320000b8320000ba320000bc320000be320000
+    m_ExpandedIDs: 00000000b82400008425000096250000d6250000ea250000183c00001a3c00001c3c00001e3c0000203c0000223c0000243c0000263c0000283c00002a3c00002c3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,9 +511,9 @@ MonoBehaviour:
     height: 433
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a4250000
+    m_SelectedIDs: d6250000
     m_LastClickedID: 0
-    m_ExpandedIDs: e672feffe2fbffff00000000ba2a00004e2b0000
+    m_ExpandedIDs: e2fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -563,14 +563,14 @@ MonoBehaviour:
     width: 911
     height: 433
   m_SceneLighting: 1
-  lastFramingTime: 3322.0462272649397
+  lastFramingTime: 564.0185220128517
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 118.97319, y: 6.99151, z: -9.346942}
+    m_Target: {x: 254.53986, y: -244.3288, z: -224.7187}
     speed: 2
-    m_Value: {x: 118.97319, y: 6.99151, z: -9.346942}
+    m_Value: {x: 254.53986, y: -244.3288, z: -224.7187}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -593,13 +593,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.0037989723, y: 0.98281676, z: -0.18341903, w: 0.020354636}
+    m_Target: {x: 0.10800744, y: 0.874464, z: -0.41435465, w: 0.2279417}
     speed: 2
-    m_Value: {x: 0.0037989723, y: 0.98281676, z: -0.18341903, w: 0.020354636}
+    m_Value: {x: 0.10800744, y: 0.874464, z: -0.41435465, w: 0.2279417}
   m_Size:
-    m_Target: 99.36246
+    m_Target: 831.37854
     speed: 2
-    m_Value: 99.36246
+    m_Value: 831.37854
   m_Ortho:
     m_Target: 0
     speed: 2
