@@ -4,14 +4,13 @@ using System.Collections;
 public class Hover : MonoBehaviour {
 	
 	public float fMag = 50.0f;
-	public float impulseMag = 3000.0f;
+	public float impulseMag = 7000.0f;
 	public float turn = 7000.0f;
 	public float forceMagnitude = 10000.0f;
 
-
 	// Use this for initialization
 	void Start () {
-		GetComponent<Rigidbody> ().centerOfMass = new Vector3 (0.0f, -0.3f, 0.0f);
+		GetComponent<Rigidbody> ().centerOfMass = new Vector3 (0.0f, -0.8f, 0.0f);
 	}
 	
 	// Update is called once per frame
@@ -47,10 +46,10 @@ public class Hover : MonoBehaviour {
 		//Impulse
 		if (leftRear.y < 3f && rightRear.y < 3f) {
 			if (Input.GetAxis ("Vertical") == 1) {
-				impulseMag = 5000.0f;
+				impulseMag = 7000.0f;
 				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
 			} else {
-				impulseMag = 800;
+				impulseMag = 3500.0f;
 				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
 			}
 		}
@@ -60,7 +59,10 @@ public class Hover : MonoBehaviour {
 		}
 
 		//Rotation
-		GetComponent<Rigidbody>().AddTorque(transform.up * turn * Input.GetAxis("Horizontal"));
+		if (Input.GetAxis("Vertical") == 1)
+			GetComponent<Rigidbody>().AddTorque(transform.up * turn * Input.GetAxis("Horizontal"));
+		else if (Input.GetAxis("Vertical") == -1)
+			GetComponent<Rigidbody>().AddTorque(transform.up * turn * ((-1) * Input.GetAxis("Horizontal")));
 
 		//Traction
 		GetComponent<Rigidbody>().AddForce(- Vector3.Dot(GetComponent<Rigidbody>().velocity, transform.right) * transform.right);

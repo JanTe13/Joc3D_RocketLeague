@@ -355,19 +355,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 53}
-    m_SelectedIDs: fc240000
-    m_LastClickedID: 9468
-    m_ExpandedIDs: 00000000ba240000a4250000b22500000e260000262600007e2a0000aa320000ac320000ae320000b0320000b2320000b4320000b6320000b8320000ba320000bc32000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 21}
+    m_SelectedIDs: ba240000
+    m_LastClickedID: 9402
+    m_ExpandedIDs: 00000000ba240000a4250000b2250000122600002a260000822a0000ac320000ae320000b0320000b2320000b4320000b6320000b8320000ba320000bc320000be32000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -395,7 +395,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba240000a4250000b22500000e260000262600007e2a0000aa320000ac320000ae320000b0320000b2320000b4320000b6320000b8320000ba320000bc320000
+    m_ExpandedIDs: 00000000ba240000a4250000b2250000122600002a260000822a0000ac320000ae320000b0320000b2320000b4320000b6320000b8320000ba320000bc320000be320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,9 +511,9 @@ MonoBehaviour:
     height: 433
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b62a0000
-    m_LastClickedID: 10934
-    m_ExpandedIDs: e2fbffff00000000
+    m_SelectedIDs: a4250000
+    m_LastClickedID: 0
+    m_ExpandedIDs: e672feffe2fbffff00000000ba2a00004e2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -568,9 +568,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -23.804802, y: -71.008514, z: 182.68939}
+    m_Target: {x: 118.97319, y: 6.99151, z: -9.346942}
     speed: 2
-    m_Value: {x: -23.804802, y: -71.008514, z: 182.68939}
+    m_Value: {x: 118.97319, y: 6.99151, z: -9.346942}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -593,13 +593,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.16535589, y: 0.06651527, z: -0.011178488, w: -0.98392487}
+    m_Target: {x: 0.0037989723, y: 0.98281676, z: -0.18341903, w: 0.020354636}
     speed: 2
-    m_Value: {x: -0.1653559, y: 0.066515274, z: -0.011178489, w: -0.9839249}
+    m_Value: {x: 0.0037989723, y: 0.98281676, z: -0.18341903, w: 0.020354636}
   m_Size:
-    m_Target: 710.86255
+    m_Target: 99.36246
     speed: 2
-    m_Value: 710.86255
+    m_Value: 99.36246
   m_Ortho:
     m_Target: 0
     speed: 2
