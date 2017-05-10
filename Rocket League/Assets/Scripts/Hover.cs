@@ -11,11 +11,15 @@ public class Hover : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GetComponent<Rigidbody> ().centerOfMass = new Vector3 (0.0f, -0.8f, 0.0f);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		//gravity
+		GetComponent<Rigidbody>().AddForce(Physics.gravity * 5f, ForceMode.Acceleration);
+
 		Vector3 leftRear = transform.TransformPoint(new Vector3(-0.5f, -0.5f, -0.5f));
 		Vector3 rightRear = transform.TransformPoint(new Vector3(0.5f, -0.5f, -0.5f));
 		Vector3 leftFront = transform.TransformPoint(new Vector3(-0.5f, -0.5f, 0.5f));
@@ -44,33 +48,33 @@ public class Hover : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - rightFront.y) * fMag * hRightFront.normal, rightFront);
 
 		//Impulse
-		//if (leftRear.y < 3f && rightRear.y < 3f) {
+		if (leftRear.y < 3f && rightRear.y < 3f) {
 			if (Input.GetAxis ("Vertical") == 1) {
-				impulseMag = 7000.0f;
+				impulseMag = 10000.0f;
 				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
 			} else {
-				impulseMag = 3500.0f;
+				impulseMag = 5000.0f;
 				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
 			}
-		//}
+		}
 		/*else {
 			impulseMag = 200;
 			GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
 		}*/
 
 		//Rotation
-		if (Input.GetAxis("Vertical") == 1)
-			GetComponent<Rigidbody>().AddTorque(transform.up * turn * Input.GetAxis("Horizontal"));
-		else if (Input.GetAxis("Vertical") == -1)
-			GetComponent<Rigidbody>().AddTorque(transform.up * turn * ((-1) * Input.GetAxis("Horizontal")));
+		turn = 50000.0f;
+		GetComponent<Rigidbody>().AddTorque(transform.up * turn * Input.GetAxis("Horizontal") * Input.GetAxis("Vertical"));
 
 		//Traction
 		GetComponent<Rigidbody>().AddForce(- Vector3.Dot(GetComponent<Rigidbody>().velocity, transform.right) * transform.right);
 
 		//Jump
 		if (leftRear.y < 1.1f) {
-			if (Input.GetKey (KeyCode.Space))
-				gameObject.GetComponent<Rigidbody> ().AddForceAtPosition (forceMagnitude * Vector3.up, transform.position);
+			if (Input.GetKey (KeyCode.Space)) {
+				impulseMag = 10.0f;
+				gameObject.GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * forceMagnitude * Vector3.up, transform.position);
+			}
 		}
 	}
 }
