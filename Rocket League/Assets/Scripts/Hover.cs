@@ -48,7 +48,7 @@ public class Hover : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForceAtPosition((1.0f - rightFront.y) * fMag * hRightFront.normal, rightFront);
 
 		//Impulse
-		if (leftRear.y < 3f && rightRear.y < 3f) {
+		//if (leftRear.y < 3f && rightRear.y < 3f) {
 			if (Input.GetAxis ("Vertical") == 1) {
 				impulseMag = 10000.0f;
 				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
@@ -56,7 +56,7 @@ public class Hover : MonoBehaviour {
 				impulseMag = 5000.0f;
 				GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);
 			}
-		}
+		//}
 		/*else {
 			impulseMag = 200;
 			GetComponent<Rigidbody> ().AddForceAtPosition (impulseMag * Input.GetAxis ("Vertical") * transform.forward, transform.position - 0.3f * transform.up);

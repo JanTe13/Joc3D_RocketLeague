@@ -355,19 +355,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Materials/Materials
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Materials/Materials
   m_LastFoldersGridSize: 71
-  m_LastProjectPath: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League
+  m_LastProjectPath: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 21}
-    m_SelectedIDs: d2260000
-    m_LastClickedID: 9938
-    m_ExpandedIDs: 000000009a26000004270000062700002e2700003a270000882b00008a2b00008c2b00008e2b0000902b0000922b0000942b0000962b0000982b00009a2b00009c2b000000ca9a3bffffff7f
+    m_SelectedIDs: 3a270000
+    m_LastClickedID: 10042
+    m_ExpandedIDs: 00000000a02600000a2700000c27000034270000402700008e2b0000902b0000922b0000942b0000962b0000982b00009a2b00009c2b00009e2b0000a02b0000a22b0000fe6e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -395,7 +395,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009a26000004270000062700002e2700003a270000882b00008a2b00008c2b00008e2b0000902b0000922b0000942b0000962b0000982b00009a2b00009c2b0000
+    m_ExpandedIDs: 00000000a02600000a2700000c27000034270000402700008e2b0000902b0000922b0000942b0000962b0000982b00009a2b00009c2b00009e2b0000a02b0000a22b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -510,24 +510,24 @@ MonoBehaviour:
     width: 308
     height: 433
   m_TreeViewState:
-    scrollPos: {x: 0, y: 32}
-    m_SelectedIDs: e6270000
-    m_LastClickedID: 10214
-    m_ExpandedIDs: 46f1ffff00000000e62700002028000056280000b4280000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ce290000
+    m_LastClickedID: 10702
+    m_ExpandedIDs: dea2fcff44f1ffff00000000ce290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Object06.O
-      m_OriginalName: Object06.O
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10538
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
@@ -568,9 +568,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 112.63379, y: 8.9648905, z: -8.700326}
+    m_Target: {x: -39.491848, y: -49.82321, z: 220.38525}
     speed: 2
-    m_Value: {x: 112.63379, y: 8.9648905, z: -8.700326}
+    m_Value: {x: -39.491848, y: -49.82321, z: 220.38525}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -593,13 +593,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.10800744, y: 0.874464, z: -0.41435465, w: 0.2279417}
+    m_Target: {x: -0.2977769, y: 0.014318793, z: -0.0044670566, w: -0.95451766}
     speed: 2
-    m_Value: {x: 0.10800744, y: 0.8744639, z: -0.41435465, w: 0.2279417}
+    m_Value: {x: -0.2977769, y: 0.014318793, z: -0.0044670566, w: -0.95451766}
   m_Size:
-    m_Target: 57.517426
+    m_Target: 626.8226
     speed: 2
-    m_Value: 57.517426
+    m_Value: 626.8226
   m_Ortho:
     m_Target: 0
     speed: 2
