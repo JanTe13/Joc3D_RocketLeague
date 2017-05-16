@@ -3,16 +3,14 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour {
 
+	public ParticleSystem partsyst1 = null;
+
 	void Explode() {
-		var exp = GetComponent<ParticleSystem>();
-		exp.Play();
-		GetComponent<MeshRenderer>().enabled = false;
-		Destroy(gameObject,exp.duration);
+		partsyst1.Play();
 	}
 
-	// Grenade explodes on impact.
 	void OnCollisionEnter(Collision coll) {
-		if (coll.gameObject.tag == "Goal") 
+		if (coll.gameObject.tag == "Ball") 
 			Explode();
 	}
 }
