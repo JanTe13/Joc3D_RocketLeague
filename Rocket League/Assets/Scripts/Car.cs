@@ -5,6 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour {
 
 	public float maxTorque;
+	public float jumpHeight;
 	public Transform centerOfMass;
 
 	public WheelCollider[] wheelColliders = new WheelCollider[4];
@@ -23,6 +24,7 @@ public class Car : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateMeshesPositions();
+		Jump();
 	}
 
 	void FixedUpdate () {
@@ -36,6 +38,7 @@ public class Car : MonoBehaviour {
 		for (int i = 0; i < 4; ++i) {
 			wheelColliders[i].motorTorque = accelerate * maxTorque;
 		}
+
 	}
 		
 	private void UpdateMeshesPositions() {
@@ -46,6 +49,16 @@ public class Car : MonoBehaviour {
 			tireMeshes [i].position = pos;
 			tireMeshes [i].rotation = quat;
 		}
+	}
+
+	private void Jump() {
+		if (Input.GetKeyDown (KeyCode.Space) && Grounded()) {
+			rigidBody.AddForce (Vector3.up * jumpHeight,ForceMode.Acceleration);
+		}
+	}
+
+	private bool Grounded() {
+		return (wheelColliders [0].isGrounded && wheelColliders [1].isGrounded && wheelColliders [2].isGrounded && wheelColliders [3].isGrounded);
 	}
 
 
