@@ -22,7 +22,7 @@ public class Car : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBody.centerOfMass = centerOfMass.localPosition;
 		state = "static";
-		t = Time.time - 2.5;
+		t = Time.time - 2.5f;
 	}
 	
 	// Update is called once per frame

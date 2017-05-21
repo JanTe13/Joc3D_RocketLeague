@@ -15,8 +15,8 @@ public class Ball : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll) {
-		if (coll.gameObject.tag == "Goal")
-			Destroy (gameObject);
-		}
+		//if (coll.gameObject.tag == "Goal")
+			//Destroy (gameObject);
+	}
 
 }
