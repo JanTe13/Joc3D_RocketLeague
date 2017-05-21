@@ -4,48 +4,69 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ScoreBoard : MonoBehaviour {
-
-	/*public Text Scoreboard;
-	private GameObject ball;
-	private int Bat_1_Score = 0;
-	private int Bat_2_Score = 0;
-
-	// Use this for initialization
-	void Start () {
-		ball = GameObject.Find ("ball");
-		//Scoreboard.text = Bat_1_Score.ToString() + " - " + Bat_2_Score.ToString();
-		Scoreboard.text = "Timer";
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (ball.transform.position.x >= -260.0f && (ball.transform.position.z <= -20.0f && ball.transform.position.z >= 20.0f))
-			Bat_1_Score++;
-		else if (ball.transform.position.x >= 240.0f && (ball.transform.position.z <= -20.0f && ball.transform.position.z >= 20.0f))
-			Bat_2_Score++;
-
-		Scoreboard.text = Bat_1_Score.ToString() + " - " + Bat_2_Score.ToString();
-	}*/
+public class Scoreboard : MonoBehaviour {
 
 	public int timeLeft = 300;
 	public Text countdownText;
+    public Text Guest;
+    public Text Home;
+    public Text Goal_msg;
 
-	void Start() {
+    private bool end_game;
+    private bool time_paused;
+
+    void Start() {
 		StartCoroutine ("LoseTime");
-	}
+        Guest.text = "0";
+        Home.text = "0";
+        Goal_msg.text = "";
+        end_game = false;
+        time_paused = false;
+    }
+
+    public bool SetScore(string team) {
+        bool updated = false;
+        time_paused = true;
+        if (team.Equals("guest"))
+        {
+            int score = int.Parse(Guest.text);
+            Guest.text = (score + 1).ToString();
+            Goal_msg.text = "Ouch! It was GOAL...";
+            updated = true;
+        }
+        else if (team.Equals("home"))
+        {
+            int score = int.Parse(Home.text);
+            Home.text = (score + 1).ToString();
+            Goal_msg.text = "GOOOOAAAAL!";
+            updated = true;
+        }
+        return updated;
+    }
 
 	void Update() {
-		if (timeLeft%60 < 10)
-			countdownText.text = ((timeLeft/60) + ":0" + (timeLeft%60));
-		else
-			countdownText.text = ((timeLeft/60) + ":" + (timeLeft%60));
-	
-		if (timeLeft <= 0) {
-			StopCoroutine ("LoseTime");
-			countdownText.text = "Times Up!";
-		}
+        if (!time_paused) {
+            if (timeLeft % 60 < 10)
+                countdownText.text = ((timeLeft / 60) + ":0" + (timeLeft % 60));
+            else
+                countdownText.text = ((timeLeft / 60) + ":" + (timeLeft % 60));
+
+            if (timeLeft <= 0)
+            {
+                StopCoroutine("LoseTime");
+                countdownText.text = "Times Up!";
+                end_game = true;
+            }
+        }
 	}
+
+    public bool GetEndGame() {
+        return end_game;
+    }
+
+    public void SetTimePaused(bool pause) {
+        time_paused = pause;
+    }
 
 	IEnumerator LoseTime() {
 		while (true) {
