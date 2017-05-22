@@ -17,7 +17,7 @@ Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket Leagu
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.029 seconds
+- Completed reload, in  0.024 seconds
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -25,13 +25,19 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.974811 ms
+UnloadTime: 2.328284 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3db4 -> priority: 1 
-  Thread -> id: 2b7c -> priority: 1 
+  Thread -> id: aa0 -> priority: 1 
+  Thread -> id: 1be0 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 17.457352 ms
+UnloadTime: 5.153963 ms
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 487.
-Total: 1.294409 ms (FindLiveObjects: 0.098294 ms CreateObjectMapping: 0.086846 ms MarkObjects: 1.049264 ms  DeleteObjects: 0.057634 ms)
+Total: 0.418048 ms (FindLiveObjects: 0.045397 ms CreateObjectMapping: 0.023685 ms MarkObjects: 0.327649 ms  DeleteObjects: 0.020132 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.720039 ms
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 295.
+Total: 0.572794 ms (FindLiveObjects: 0.029606 ms CreateObjectMapping: 0.024869 ms MarkObjects: 0.269225 ms  DeleteObjects: 0.247908 ms)
 

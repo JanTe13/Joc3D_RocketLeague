@@ -11,6 +11,7 @@ public class Scoreboard : MonoBehaviour {
     public Text Guest;
     public Text Home;
     public Text Goal_msg;
+    public Text Restart_msg;
 
     private bool end_game;
     private bool time_paused;
@@ -20,6 +21,7 @@ public class Scoreboard : MonoBehaviour {
         Guest.text = "0";
         Home.text = "0";
         Goal_msg.text = "";
+        Restart_msg.text = "";
         end_game = false;
         time_paused = false;
     }
@@ -54,8 +56,15 @@ public class Scoreboard : MonoBehaviour {
             if (timeLeft <= 0)
             {
                 StopCoroutine("LoseTime");
-                countdownText.text = "Times Up!";
-                end_game = true;
+                end_game = time_paused = true;
+                Goal_msg.text = "Times Up! ";
+                if (int.Parse(Home.text) > int.Parse(Guest.text))
+                    Goal_msg.text += "You've won!";
+                else if (int.Parse(Home.text) < int.Parse(Guest.text))
+                    Goal_msg.text += "You've lost...";
+                else
+                    Goal_msg.text += "It was a tie";
+                Restart_msg.text = "Press 'R' to go to the Menu";
             }
         }
 	}
@@ -66,6 +75,10 @@ public class Scoreboard : MonoBehaviour {
 
     public void SetTimePaused(bool pause) {
         time_paused = pause;
+    }
+
+    public void SetGoalMsg (string msg) {
+        Goal_msg.text = msg;
     }
 
 	IEnumerator LoseTime() {

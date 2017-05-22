@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour {
 
@@ -11,19 +13,16 @@ public class GameController : MonoBehaviour {
     public GameObject scoreboard;
     private Quaternion rotationCar;
 
-    public float time_max;
-    private float time;
-
     // Use this for initialization
     void Start () {
         rotationCar = car.GetComponent<Rigidbody>().transform.rotation;
-        time = time_max;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(0);
 		if (home.GetComponent<Explosion>().GetGoal()) {
-            time -= Time.deltaTime;
             bool result = scoreboard.GetComponent<Scoreboard>().SetScore("home");
             if (result)
                 home.GetComponent<Explosion>().SetGoal(false);
@@ -35,7 +34,6 @@ public class GameController : MonoBehaviour {
             RestartPositions();
         }
         if (guest.GetComponent<Explosion>().GetGoal()) {
-            time -= time/5;
             bool result = scoreboard.GetComponent<Scoreboard>().SetScore("guest");
             if (result)
                 guest.GetComponent<Explosion>().SetGoal(false);
@@ -45,6 +43,9 @@ public class GameController : MonoBehaviour {
             ball.SetActive(false);
             //temps
             RestartPositions();
+        }
+        if (scoreboard.GetComponent<Scoreboard>().GetEndGame()) {
+            ball.SetActive(false);
         }
 
     }
@@ -61,5 +62,6 @@ public class GameController : MonoBehaviour {
         car.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionCar, rotationCar);
         ball.SetActive(true);
         scoreboard.GetComponent<Scoreboard>().SetTimePaused(false);
+        scoreboard.GetComponent<Scoreboard>().SetGoalMsg("");
     }
 }
