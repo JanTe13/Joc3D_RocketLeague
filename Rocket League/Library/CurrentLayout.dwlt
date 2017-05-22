@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -107,7 +107,7 @@ MonoBehaviour:
     width: 1536
     height: 731
   m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
   controlID: 9
 --- !u!114 &6
@@ -131,7 +131,7 @@ MonoBehaviour:
     width: 1225
     height: 731
   m_MinSize: {x: 404, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
   controlID: 10
 --- !u!114 &7
@@ -230,10 +230,10 @@ MonoBehaviour:
     y: 459
     width: 1225
     height: 272
-  m_MinSize: {x: 332, y: 271}
-  m_MaxSize: {x: 14002, y: 10021}
+  m_MinSize: {x: 336, y: 271}
+  m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 124
+  controlID: 77
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,8 +277,8 @@ MonoBehaviour:
     y: 0
     width: 408
     height: 272
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -412,10 +412,10 @@ MonoBehaviour:
     width: 301
     height: 438
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e310000
-    m_LastClickedID: 12638
-    m_ExpandedIDs: 46eeffff14efffffe4effffff6efffffe2fbffff00000000b62f00005e310000
+    scrollPos: {x: 0, y: 32}
+    m_SelectedIDs: 42280000
+    m_LastClickedID: 10306
+    m_ExpandedIDs: e2fbffff00000000b0270000be2700002e280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -465,14 +465,14 @@ MonoBehaviour:
     width: 918
     height: 438
   m_SceneLighting: 1
-  lastFramingTime: 4463.112376223553
+  lastFramingTime: 5168.7358297581395
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 571.5102, y: 59.301212, z: 29.972748}
+    m_Target: {x: -47.3887, y: 3.1916142, z: -4.391146}
     speed: 2
-    m_Value: {x: 571.5102, y: 59.301212, z: 29.972748}
+    m_Value: {x: -47.3887, y: 3.1916142, z: -4.391146}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -495,13 +495,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.013489568, y: 0.039882857, z: -0.00053860043, w: -0.9991132}
+    m_Target: {x: -0.068384476, y: 0.50685674, z: -0.040380392, w: -0.8583642}
     speed: 2
-    m_Value: {x: -0.013489568, y: 0.039882857, z: -0.00053860043, w: -0.9991132}
+    m_Value: {x: -0.06838448, y: 0.5068568, z: -0.040380396, w: -0.8583643}
   m_Size:
-    m_Target: 365.52826
+    m_Target: 11.591643
     speed: 2
-    m_Value: 365.52826
+    m_Value: 11.591643
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -575,19 +575,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Materials/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Materials/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 61}
-    m_SelectedIDs: c8240000
-    m_LastClickedID: 9416
-    m_ExpandedIDs: 00000000c8240000fe2500003e260000042700007a2900007c2900007e29000080290000822900008429000086290000882900008a2900008c2900008e290000902900009229000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 70}
+    m_SelectedIDs: e0260000
+    m_LastClickedID: 9952
+    m_ExpandedIDs: 00000000c8240000fe2500003e260000dc2600000227000004270000822900008429000086290000882900008a2900008c2900008e29000090290000922900009429000096290000982900009a29000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -615,7 +615,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c8240000fe2500003e260000042700007a2900007c2900007e29000080290000822900008429000086290000882900008a2900008c2900008e2900009029000092290000
+    m_ExpandedIDs: 00000000c8240000fe2500003e26000004270000822900008429000086290000882900008a2900008c2900008e29000090290000922900009429000096290000982900009a290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
