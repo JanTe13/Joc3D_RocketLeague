@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(0);
-		if (home.GetComponent<Explosion>().GetGoal()) {
+        if (home.GetComponent<Explosion>().GetGoal()) {
             bool result = scoreboard.GetComponent<Scoreboard>().SetScore("home");
             if (result)
                 home.GetComponent<Explosion>().SetGoal(false);
@@ -30,8 +30,6 @@ public class GameController : MonoBehaviour {
                 print("Error. Score is not updated");
 
             ball.SetActive(false);
-            //temps
-            RestartPositions();
         }
         if (guest.GetComponent<Explosion>().GetGoal()) {
             bool result = scoreboard.GetComponent<Scoreboard>().SetScore("guest");
@@ -41,9 +39,12 @@ public class GameController : MonoBehaviour {
                 print("Error. Score is not updated");
 
             ball.SetActive(false);
-            //temps
-            RestartPositions();
         }
+
+        //temps
+        if (scoreboard.GetComponent<Scoreboard>().GetNewStart())
+            RestartPositions();
+
         if (scoreboard.GetComponent<Scoreboard>().GetEndGame()) {
             ball.SetActive(false);
         }
@@ -63,5 +64,6 @@ public class GameController : MonoBehaviour {
         ball.SetActive(true);
         scoreboard.GetComponent<Scoreboard>().SetTimePaused(false);
         scoreboard.GetComponent<Scoreboard>().SetGoalMsg("");
+        scoreboard.GetComponent<Scoreboard>().SetMoreTime(6);
     }
 }
