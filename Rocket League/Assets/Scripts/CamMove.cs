@@ -22,12 +22,12 @@ public class CamMove : MonoBehaviour
     // The target we are following
     public Transform target;
     // The distance in the x-z plane to the target
-    public float distance = 10.0f;
+    public float distance;
     // the height we want the camera to be above the target
-    public float height = 7.0f;
+    public float height;
     // How much we 
-    public float heightDamping = 2.0f;
-    public float rotationDamping = 3.0f;
+    public float heightDamping;
+    public float rotationDamping;
 
     void LateUpdate()
     {
