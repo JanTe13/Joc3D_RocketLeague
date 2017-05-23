@@ -49,6 +49,15 @@ public class GameController : MonoBehaviour {
             ball.SetActive(false);
         }
 
+        if (scoreboard.GetComponent<Scoreboard>().GetCarStoped()) {
+            car.GetComponent<Car>().enabled = false;
+            ball.GetComponent<Rigidbody>().useGravity = false;
+        }
+        else {
+            car.GetComponent<Car>().enabled = true;
+            ball.GetComponent<Rigidbody>().useGravity = true;
+        }
+
     }
 
     private void RestartPositions() { 
@@ -59,6 +68,6 @@ public class GameController : MonoBehaviour {
         ball.SetActive(true);
         scoreboard.GetComponent<Scoreboard>().SetTimePaused(false);
         scoreboard.GetComponent<Scoreboard>().SetGoalMsg("");
-        scoreboard.GetComponent<Scoreboard>().SetMoreTime(10);
+        scoreboard.GetComponent<Scoreboard>().SetMoreTime(9);
     }
 }

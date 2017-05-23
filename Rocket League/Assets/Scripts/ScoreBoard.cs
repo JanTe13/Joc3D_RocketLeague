@@ -16,6 +16,7 @@ public class Scoreboard : MonoBehaviour {
     private bool end_game;
     private bool time_paused;
     private int time;
+    private bool car_stoped;
 
     void Start() {
 		StartCoroutine ("LoseTime");
@@ -26,6 +27,7 @@ public class Scoreboard : MonoBehaviour {
         end_game = false;
         time_paused = false;
         time = timeLeft + 5;
+        car_stoped = true;
     }
 
     public bool SetScore(string team) {
@@ -50,7 +52,15 @@ public class Scoreboard : MonoBehaviour {
     }
 
 	void Update() {
-        if (!time_paused) {
+        if (car_stoped) {
+            Goal_msg.text = (5 - ((time - 5) - timeLeft)).ToString();
+            if (Goal_msg.text == "0") {
+                car_stoped = false;
+                Goal_msg.text = "";
+                timeLeft += 5;
+            }
+        }
+        if (!time_paused && !car_stoped) {
             if (timeLeft % 60 < 10)
                 countdownText.text = ((timeLeft / 60) + ":0" + (timeLeft % 60));
             else
@@ -58,7 +68,7 @@ public class Scoreboard : MonoBehaviour {
         }
         if (timeLeft <= 0 && !time_paused) {
             StopCoroutine("LoseTime");
-            end_game = time_paused = true;
+            end_game = true;
             Goal_msg.text = "Times Up! ";
             if (int.Parse(Home.text) > int.Parse(Guest.text))
                 Goal_msg.text += "You've won!";
@@ -69,6 +79,8 @@ public class Scoreboard : MonoBehaviour {
             Restart_msg.text = "Press 'R' to go to the Menu";
         }
 
+        if (GiveStart())
+            Goal_msg.text = (9 - (time - timeLeft)).ToString();
 
 	}
 
@@ -85,16 +97,19 @@ public class Scoreboard : MonoBehaviour {
     }
 
     public bool GetNewStart() {
-        return (time - timeLeft >= 10 && time_paused);
+        return (time - timeLeft >= 9 && time_paused);
     }
 
     private bool GiveStart() {
-        return (time - timeLeft == 7 && time_paused);
-
+        return (time - timeLeft >= 6 && time - timeLeft <= 9 && time_paused);
     }
 
     public void SetMoreTime(int sec) {
         timeLeft += sec;
+    }
+
+    public bool GetCarStoped() {
+        return car_stoped;
     }
 
 	IEnumerator LoseTime() {
