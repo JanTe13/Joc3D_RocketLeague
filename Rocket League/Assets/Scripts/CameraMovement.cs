@@ -13,6 +13,9 @@ public class CameraMovement : MonoBehaviour {
     private float currentX = 0.0f;
     private float currentY = 90.0f;
 
+    [SerializeField]
+    private Transform target;
+
     private void Start() {
         camTransform = transform;
     }
@@ -44,5 +47,14 @@ public class CameraMovement : MonoBehaviour {
         Quaternion rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         camTransform.position = lookAt.position + rotation * dir;
         camTransform.rotation = Quaternion.Euler(currentX, currentY, 0.0f);
+        // compute rotation
+        if (lookAt)
+        {
+            transform.LookAt(target);
+        }
+        else
+        {
+            transform.rotation = target.rotation;
+        }
     }
 }

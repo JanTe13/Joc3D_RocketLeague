@@ -51,19 +51,14 @@ public class GameController : MonoBehaviour {
 
     }
 
-    private void RestartPositions() {
-
-        /////////////////////////////////////////////
-        ////Afegir temps abans de començar de nou////
-        /////////////////////////////////////////////
-
+    private void RestartPositions() { 
         Vector3 positionBall = new Vector3 ( -6.59f, 7.8f, -1.9f );
-        Vector3 positionCar = new Vector3(-34.6f, 0.5f, -1.9f);
+        Vector3 positionCar = new Vector3(-245.5f, 0.5f, -1.9f);
         ball.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionBall, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
         car.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionCar, rotationCar);
         ball.SetActive(true);
         scoreboard.GetComponent<Scoreboard>().SetTimePaused(false);
         scoreboard.GetComponent<Scoreboard>().SetGoalMsg("");
-        scoreboard.GetComponent<Scoreboard>().SetMoreTime(6);
+        scoreboard.GetComponent<Scoreboard>().SetMoreTime(10);
     }
 }

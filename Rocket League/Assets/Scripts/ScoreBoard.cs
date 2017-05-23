@@ -57,17 +57,19 @@ public class Scoreboard : MonoBehaviour {
                 countdownText.text = ((timeLeft / 60) + ":" + (timeLeft % 60));
         }
         if (timeLeft <= 0 && !time_paused) {
-                StopCoroutine("LoseTime");
-                end_game = time_paused = true;
-                Goal_msg.text = "Times Up! ";
-                if (int.Parse(Home.text) > int.Parse(Guest.text))
-                    Goal_msg.text += "You've won!";
-                else if (int.Parse(Home.text) < int.Parse(Guest.text))
-                    Goal_msg.text += "You've lost...";
-                else
-                    Goal_msg.text += "It was a tie";
-                Restart_msg.text = "Press 'R' to go to the Menu";
-            }
+            StopCoroutine("LoseTime");
+            end_game = time_paused = true;
+            Goal_msg.text = "Times Up! ";
+            if (int.Parse(Home.text) > int.Parse(Guest.text))
+                Goal_msg.text += "You've won!";
+            else if (int.Parse(Home.text) < int.Parse(Guest.text))
+                Goal_msg.text += "You've lost...";
+            else
+                Goal_msg.text += "It was a tie";
+            Restart_msg.text = "Press 'R' to go to the Menu";
+        }
+
+
 	}
 
     public bool GetEndGame() {
@@ -83,7 +85,12 @@ public class Scoreboard : MonoBehaviour {
     }
 
     public bool GetNewStart() {
-        return (time - timeLeft >= 6 && time_paused);
+        return (time - timeLeft >= 10 && time_paused);
+    }
+
+    private bool GiveStart() {
+        return (time - timeLeft == 7 && time_paused);
+
     }
 
     public void SetMoreTime(int sec) {
