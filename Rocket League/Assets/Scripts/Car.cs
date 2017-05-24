@@ -28,8 +28,8 @@ public class Car : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateMeshesPositions();
-		Jump();
-
+        if (Input.GetKeyDown(KeyCode.Space) && Grounded())
+            Jump();
 	}
 
 	void FixedUpdate () {
@@ -83,10 +83,8 @@ public class Car : MonoBehaviour {
 		}
 	}
 
-	private void Jump() {
-		if (Input.GetKeyDown (KeyCode.Space) && Grounded()) {
-			rigidBody.AddForce (Vector3.up * jumpHeight,ForceMode.Acceleration);
-		}
+	public void Jump() {
+		rigidBody.AddForce (Vector3.up * jumpHeight,ForceMode.Acceleration);
 	}
 
 	private bool Grounded() {
