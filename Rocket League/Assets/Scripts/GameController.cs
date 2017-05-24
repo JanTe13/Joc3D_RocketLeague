@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(0);
         if (home.GetComponent<Explosion>().GetGoal()) {
+            if (Mathf.Abs(car.GetComponent<Transform>().position.x - home.GetComponent<Transform>().position.x) < 150)
+                car.GetComponent<Car>().Jump();
             bool result = scoreboard.GetComponent<Scoreboard>().SetScore("home");
             if (result)
                 home.GetComponent<Explosion>().SetGoal(false);
@@ -32,6 +34,8 @@ public class GameController : MonoBehaviour {
             ball.SetActive(false);
         }
         if (guest.GetComponent<Explosion>().GetGoal()) {
+            if (Mathf.Abs(car.GetComponent<Transform>().position.x - guest.GetComponent<Transform>().position.x) < 150)
+                car.GetComponent<Car>().Jump();
             bool result = scoreboard.GetComponent<Scoreboard>().SetScore("guest");
             if (result)
                 guest.GetComponent<Explosion>().SetGoal(false);

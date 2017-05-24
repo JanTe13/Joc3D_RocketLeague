@@ -45,7 +45,7 @@ public class Scoreboard : MonoBehaviour {
         {
             int score = int.Parse(Home.text);
             Home.text = (score + 1).ToString();
-            Goal_msg.text = "GOOOOAAAAL!";
+            Goal_msg.text = "GOAL!";
             updated = true;
         }
         return updated;
@@ -53,11 +53,11 @@ public class Scoreboard : MonoBehaviour {
 
 	void Update() {
         if (car_stoped) {
-            Goal_msg.text = (5 - ((time - 5) - timeLeft)).ToString();
+            Goal_msg.text = (3 - ((time - 5) - timeLeft)).ToString();
             if (Goal_msg.text == "0") {
                 car_stoped = false;
                 Goal_msg.text = "";
-                timeLeft += 5;
+                timeLeft += 3;
             }
         }
         if (!time_paused && !car_stoped) {

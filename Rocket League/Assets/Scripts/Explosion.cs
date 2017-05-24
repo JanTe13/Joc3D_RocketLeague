@@ -16,7 +16,14 @@ public class Explosion : MonoBehaviour {
         goal = false;
 	}
 
-	void OnCollisionEnter(Collision coll) {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            Explode();
+            goal = true;
+        }
+    }
+
+    void OnCollisionEnter(Collision coll) {
 		if (coll.gameObject.tag == "Ball") {
             Explode ();
             goal = true;
