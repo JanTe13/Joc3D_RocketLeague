@@ -21,6 +21,7 @@ public class CamMove : MonoBehaviour
 
     // The target we are following
     public Transform target;
+	public Transform sphere;
     // The distance in the x-z plane to the target
     public float distance;
     // the height we want the camera to be above the target
@@ -36,6 +37,7 @@ public class CamMove : MonoBehaviour
             return;
 
         // Calculate the current rotation angles
+
         float wantedRotationAngle = target.eulerAngles.y;
         float wantedHeight = target.position.y + height;
         float currentRotationAngle = transform.eulerAngles.y;
@@ -50,12 +52,17 @@ public class CamMove : MonoBehaviour
         // Convert the angle into a rotation
         Quaternion currentRotation = Quaternion.Euler(0, currentRotationAngle, 0);
 
+
         // Set the position of the camera on the x-z plane to:
         // distance meters behind the target
+
+		var v3T = sphere.position - target.position;
+		//transform.position = sphere.position + v3T.normalized * distance;
         transform.position = target.position;
-        transform.position -= currentRotation * Vector3.forward * distance;
+		transform.position -= currentRotation * Vector3.forward * distance + v3T.normalized * (distance-14);
 
         // Set the height of the camera
+
         transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
 
         // Always look at the target
