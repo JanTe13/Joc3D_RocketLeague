@@ -12,6 +12,7 @@ public class Car : MonoBehaviour {
 	public WheelCollider[] wheelColliders = new WheelCollider[4];
 	public Transform[] tireMeshes = new Transform[4];
 
+	private Movement m;
 	private Rigidbody rigidBody;
 	private string state;
 	private float t;
@@ -21,6 +22,7 @@ public class Car : MonoBehaviour {
 	{
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBody.centerOfMass = centerOfMass.localPosition;
+		m = GameObject.FindGameObjectWithTag("Movement").GetComponent<Movement> ();
 		state = "static";
 		t = Time.time - 2.5f;
 	}
@@ -28,48 +30,43 @@ public class Car : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateMeshesPositions();
-        if (Input.GetKeyDown(KeyCode.Space) && Grounded())
-            Jump();
+		if (Input.GetKeyDown (KeyCode.Space) && m.Grounded(wheelColliders))
+  			m.Jump (jumpHeight,rigidBody);
 	}
 
 	void FixedUpdate () {
-		float steer = Input.GetAxis("Horizontal");
-		float accelerate = Input.GetAxis("Vertical");
-
-		float finalAngle = steer * 5f;
-		wheelColliders[0].steerAngle = finalAngle;
-		wheelColliders[1].steerAngle = finalAngle;
-
+		float directionAngle = Input.GetAxis("Horizontal");
+		float directionAcc = Input.GetAxis("Vertical");
+		float steer = 5f;
+		m.Rotate (steer, wheelColliders, directionAngle);
 		if (state == "static") {
-			if (accelerate == -1) {
+			if (directionAcc == -1) {
 				if (Time.time - 2.5 >= t) {
 					maxBrake = 0;
 					maxTorque /= 2;
 					state = "backward";
 				}
-			} else if (accelerate == 1) {
+			} else if (directionAcc == 1) {
 				maxBrake = 0;
 				maxTorque *= 2;
 				state = "forward";
 			}
 		} else if (state == "backward") {
-			 if (accelerate != -1 && accelerate != 1) {
+			if (directionAcc != -1 && directionAcc != 1) {
 				maxBrake = 10000;
 				maxTorque *= 2;
 				state = "static";
 			}
 		} else {
-			if (accelerate != -1 && accelerate != 1) {
+			if (directionAcc != -1 && directionAcc != 1) {
 				maxBrake = 80000;
 				maxTorque /= 2;
 				state = "static";
 				t = Time.time;
 			}
 		}
-		for (int i = 0; i < 4; ++i) {
-			wheelColliders [i].motorTorque = accelerate * maxTorque;
-			wheelColliders [i].brakeTorque = maxBrake;
-		}
+		m.Accelerate (maxTorque,wheelColliders,directionAcc);
+		m.Brake (maxBrake,wheelColliders);
 
 	}
 		
@@ -84,11 +81,7 @@ public class Car : MonoBehaviour {
 	}
 
 	public void Jump() {
-		rigidBody.AddForce (Vector3.up * jumpHeight,ForceMode.Acceleration);
-	}
-
-	private bool Grounded() {
-		return (wheelColliders [0].isGrounded && wheelColliders [1].isGrounded && wheelColliders [2].isGrounded && wheelColliders [3].isGrounded);
+		m.Jump (jumpHeight,rigidBody);
 	}
 
 
