@@ -17,7 +17,7 @@ Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket Leagu
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.022 seconds
+- Completed reload, in  0.039 seconds
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -25,31 +25,13 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.087086 ms
+UnloadTime: 4.221544 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3d48 -> priority: 1 
-  Thread -> id: ce4 -> priority: 1 
+  Thread -> id: 53f4 -> priority: 1 
+  Thread -> id: 221c -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.639516 ms
+UnloadTime: 5.718862 ms
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 509.
-Total: 0.574768 ms (FindLiveObjects: 0.071846 ms CreateObjectMapping: 0.032764 ms MarkObjects: 0.448445 ms  DeleteObjects: 0.020922 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.780754 ms
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 1.673380 ms (FindLiveObjects: 0.070266 ms CreateObjectMapping: 0.088031 ms MarkObjects: 0.633981 ms  DeleteObjects: 0.879126 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.787937 ms
-
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 510.
-Total: 0.641482 ms (FindLiveObjects: 0.080925 ms CreateObjectMapping: 0.060792 ms MarkObjects: 0.465814 ms  DeleteObjects: 0.031975 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.789516 ms
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 0.685695 ms (FindLiveObjects: 0.050134 ms CreateObjectMapping: 0.043818 ms MarkObjects: 0.312253 ms  DeleteObjects: 0.278699 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 864.
+Total: 0.531344 ms (FindLiveObjects: 0.069872 ms CreateObjectMapping: 0.024869 ms MarkObjects: 0.415285 ms  DeleteObjects: 0.019737 ms)
 
