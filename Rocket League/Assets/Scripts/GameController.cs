@@ -10,11 +10,15 @@ public class GameController : MonoBehaviour {
     public GameObject car;
     public GameObject home;
     public GameObject guest;
+    public GameObject levelManager;
     public GameObject scoreboard;
     private Quaternion rotationCar;
 
     // Use this for initialization
     void Start () {
+        int model = levelManager.GetComponent<LevelManager>().getCarElection();
+        int level = levelManager.GetComponent<LevelManager>().getLevel();
+        //car.GetComponentInChildren<MeshRenderer>().material = ;
         rotationCar = car.GetComponent<Rigidbody>().transform.rotation;
     }
 	
