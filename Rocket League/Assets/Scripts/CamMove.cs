@@ -87,10 +87,13 @@ public class CamMove : MonoBehaviour
 
 		} else {
 
-
+			/*
 			var v3T = sphere.position - target.position;
 			transform.position = target.position + v3T.normalized * (distance);
-			transform.LookAt (sphere);
+			transform.LookAt (sphere);*/
+
+			transform.position = new Vector3 (-337,110,-146);
+			transform.rotation = Quaternion.Euler (30,65,0);
 
 		}
     }
