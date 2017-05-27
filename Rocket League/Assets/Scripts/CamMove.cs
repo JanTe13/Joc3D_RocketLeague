@@ -29,21 +29,31 @@ public class CamMove : MonoBehaviour
     // How much we 
     public float heightDamping;
     public float rotationDamping;
+    public GameObject pointLight;
 
 	private bool CameraBall;
 
 	void Start() {
 		CameraBall = false;
-	}
+        pointLight.GetComponent<Light>().enabled = false;
+    }
 
-	void Update () {
-		if (Input.GetKeyDown (KeyCode.C)) {
-			if (!CameraBall)
-				CameraBall = true;
-			else
-				CameraBall = false;
-		}
-	}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (!CameraBall)
+            {
+                CameraBall = true;
+                pointLight.GetComponent<Light>().enabled = true;
+            }
+            else
+            {
+                CameraBall = false;
+                pointLight.GetComponent<Light>().enabled = false;
+            }
+        }
+    }
 
     void LateUpdate()
     {
