@@ -100,8 +100,8 @@ public class Scoreboard : MonoBehaviour {
         return (time - timeLeft >= 9 && time_paused);
     }
 
-    private bool GiveStart() {
-        return (time - timeLeft >= 6 && time - timeLeft <= 9 && time_paused);
+    public bool GiveStart() {
+        return (time - timeLeft >= 6 && time - timeLeft < 9 && time_paused);
     }
 
     public void SetMoreTime(int sec) {
