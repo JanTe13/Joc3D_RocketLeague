@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 8}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 0
     width: 408
     height: 331
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -67,10 +67,10 @@ MonoBehaviour:
     y: 400
     width: 1225
     height: 331
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
+  m_MinSize: {x: 332, y: 271}
+  m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 249
+  controlID: 118
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -91,8 +91,8 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
   controlID: 9
 --- !u!114 &5
@@ -113,8 +113,8 @@ MonoBehaviour:
     y: 0
     width: 311
     height: 731
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -255,7 +255,7 @@ MonoBehaviour:
     width: 1225
     height: 731
   m_MinSize: {x: 404, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
   controlID: 10
 --- !u!114 &12
@@ -372,19 +372,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d8240000
-    m_LastClickedID: 9432
-    m_ExpandedIDs: 00000000d82400001626000056260000f82600001e27000020270000fa2c0000fc2c0000fe2c0000002d0000022d0000042d0000062d0000082d00000a2d00000c2d00000e2d0000102d0000122d000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 27}
+    m_SelectedIDs: 16250000
+    m_LastClickedID: 9494
+    m_ExpandedIDs: 00000000cc2400000a2600004a260000ec26000012270000142700003c2900003e29000040290000422900004429000046290000482900004a2900004c2900004e29000050290000522900005429000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d82400001626000056260000f82600001e27000020270000fa2c0000fc2c0000fe2c0000002d0000022d0000042d0000062d0000082d00000a2d00000c2d00000e2d0000102d0000122d0000
+    m_ExpandedIDs: 00000000cc2400000a2600004a260000ec26000012270000142700003c2900003e29000040290000422900004429000046290000482900004a2900004c2900004e290000502900005229000054290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -456,7 +456,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 7}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -527,10 +527,10 @@ MonoBehaviour:
     width: 301
     height: 379
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6af2ffff
-    m_LastClickedID: -3478
-    m_ExpandedIDs: 38f5ffffe2fbffff00000000e02d0000602e0000
+    scrollPos: {x: 0, y: 6}
+    m_SelectedIDs: 2c330000
+    m_LastClickedID: 13100
+    m_ExpandedIDs: 9ef7fffff8f8ffff88f9ffff82faffff88faffffe2fbffff000000006e320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -549,7 +549,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 6}
     m_SearchString: 
   m_ExpandedScenes:
-  - scene2
+  - scene1
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -585,9 +585,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 683.19324, y: -13.206383, z: 797.5983}
+    m_Target: {x: 278.79916, y: 92.64895, z: 140.77596}
     speed: 2
-    m_Value: {x: 683.19324, y: -13.206383, z: 797.5983}
+    m_Value: {x: 278.79916, y: 92.64895, z: 140.77596}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -610,13 +610,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.055608302, y: 0.07839412, z: -0.004379629, w: -0.99536073}
+    m_Target: {x: -0.11160036, y: 0.8360859, z: -0.18504289, w: -0.5042469}
     speed: 2
-    m_Value: {x: -0.055608302, y: 0.07839412, z: -0.004379629, w: -0.99536073}
+    m_Value: {x: -0.11160036, y: 0.8360859, z: -0.18504289, w: -0.5042469}
   m_Size:
-    m_Target: 1071.1388
+    m_Target: 1.5249593
     speed: 2
-    m_Value: 1071.1388
+    m_Value: 1.5249593
   m_Ortho:
     m_Target: 0
     speed: 2

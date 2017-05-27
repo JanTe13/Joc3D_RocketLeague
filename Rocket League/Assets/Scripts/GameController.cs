@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour {
     public GameObject guest;
     public GameObject scoreboard;
     public Material mat1, mat2, mat3;
-    private Quaternion rotationCar;
+    private Quaternion rotationCar, rotationEnemy;
 
     private GameObject teammate1;
     private GameObject teammate2;
@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour {
         enemy2.SetActive(2 <= level);
         enemy3.SetActive(3 <= level);
 
-        rotationCar = car.GetComponent<Rigidbody>().transform.rotation;
+        //rotationCar = car.GetComponent<Rigidbody>().transform.rotation;
     }
 	
 	// Update is called once per frame
@@ -94,8 +94,11 @@ public class GameController : MonoBehaviour {
         }
 
         //temps
-        if (scoreboard.GetComponent<Scoreboard>().GetNewStart())
+        if (scoreboard.GetComponent<Scoreboard>().GiveStart())
             RestartPositions();
+
+        else if (scoreboard.GetComponent<Scoreboard>().GetNewStart())
+            RestartGamePositions();
 
         if (scoreboard.GetComponent<Scoreboard>().GetEndGame()) {
             ball.SetActive(false);
@@ -103,10 +106,21 @@ public class GameController : MonoBehaviour {
 
         if (scoreboard.GetComponent<Scoreboard>().GetCarStoped()) {
             car.GetComponent<Car>().enabled = false;
+            teammate1.GetComponent<IA_Local>().enabled = false;
+            teammate2.GetComponent<IA_Local>().enabled = false;
+            enemy1.GetComponent<IA_Visitant>().enabled = false;
+            enemy2.GetComponent<IA_Visitant>().enabled = false;
+            enemy3.GetComponent<IA_Visitant>().enabled = false;
+
             ball.GetComponent<Rigidbody>().useGravity = false;
         }
         else {
             car.GetComponent<Car>().enabled = true;
+            teammate1.GetComponent<IA_Local>().enabled = true;
+            teammate2.GetComponent<IA_Local>().enabled = true;
+            enemy1.GetComponent<IA_Visitant>().enabled = true;
+            enemy2.GetComponent<IA_Visitant>().enabled = true;
+            enemy3.GetComponent<IA_Visitant>().enabled = true;
             ball.GetComponent<Rigidbody>().useGravity = true;
         }
 
@@ -115,8 +129,22 @@ public class GameController : MonoBehaviour {
     private void RestartPositions() { 
         Vector3 positionBall = new Vector3 ( -6.59f, 7.8f, -1.9f );
         Vector3 positionCar = new Vector3(-245.5f, 0.5f, -1.9f);
-        ball.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionBall, new Quaternion(0.0f, 0.0f, 0.0f, 1.0f));
-        car.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionCar, rotationCar);
+        Vector3 positionTeam1 = new Vector3(-245.5f, 0.5f, 34.5f);
+        Vector3 positionTeam2 = new Vector3(-245.5f, 0.5f, -42.5f);
+        Vector3 positionEnemy1 = new Vector3(231.3f, 0.5f, -1.9f);
+        Vector3 positionEnemy2 = new Vector3(231.3f, 0.5f, 34.5f);
+        Vector3 positionEnemy3 = new Vector3(231.3f, 0.5f, -42.5f);
+        ball.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionBall, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        car.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionCar, Quaternion.Euler(0.0f,90.0f,0.0f));
+        teammate1.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionTeam1, Quaternion.Euler(0.0f, 90.0f, 0.0f));
+        teammate2.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionTeam2, Quaternion.Euler(0.0f, 90.0f, 0.0f));
+        enemy1.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionEnemy1, Quaternion.Euler(0.0f, -90.0f, 0.0f));
+        enemy2.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionEnemy2, Quaternion.Euler(0.0f, -90.0f, 0.0f));
+        enemy3.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionEnemy3, Quaternion.Euler(0.0f, -90.0f, 0.0f));
+
+    }
+
+    private void RestartGamePositions() {
         ball.SetActive(true);
         scoreboard.GetComponent<Scoreboard>().SetTimePaused(false);
         scoreboard.GetComponent<Scoreboard>().SetGoalMsg("");
