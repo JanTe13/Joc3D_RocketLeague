@@ -10,15 +10,59 @@ public class GameController : MonoBehaviour {
     public GameObject car;
     public GameObject home;
     public GameObject guest;
-    public GameObject levelManager;
     public GameObject scoreboard;
+    public Material mat1, mat2, mat3;
     private Quaternion rotationCar;
 
+    private GameObject teammate1;
+    private GameObject teammate2;
+    private GameObject enemy1;
+    private GameObject enemy2;
+    private GameObject enemy3;
+
     // Use this for initialization
-    void Start () {
-        int model = levelManager.GetComponent<LevelManager>().getCarElection();
-        int level = levelManager.GetComponent<LevelManager>().getLevel();
-        //car.GetComponentInChildren<MeshRenderer>().material = ;
+    void Start() {
+        //Inicialització cotxes
+        teammate1 = GameObject.Find("Teammate_1");
+        teammate2 = GameObject.Find("Teammate_2");
+        enemy1 = GameObject.Find("Enemy_1");
+        enemy2 = GameObject.Find("Enemy_2");
+        enemy3 = GameObject.Find("Enemy_3");
+
+        int model = PlayerPrefs.GetInt("carElection");
+        int level = PlayerPrefs.GetInt("level");
+        if (model == 1) {
+            car.GetComponentInChildren<MeshRenderer>().material = mat1;
+            teammate1.GetComponentInChildren<MeshRenderer>().material = mat1;
+            teammate2.GetComponentInChildren<MeshRenderer>().material = mat1;
+        }
+        else if (model == 2) {
+            car.GetComponentInChildren<MeshRenderer>().material = mat2;
+            teammate1.GetComponentInChildren<MeshRenderer>().material = mat2;
+            teammate2.GetComponentInChildren<MeshRenderer>().material = mat2;
+        }
+        else if (model == 3) {
+            car.GetComponentInChildren<MeshRenderer>().material = mat3;
+            teammate1.GetComponentInChildren<MeshRenderer>().material = mat3;
+            teammate2.GetComponentInChildren<MeshRenderer>().material = mat3;
+        }
+        int model_rivals = Random.Range(1, 3);
+        while (model_rivals == model)
+            model_rivals = Random.Range(1, 3);
+        SetModelRivals(model_rivals);
+        //Inicialització cotxes
+        teammate1 = GameObject.Find("Teammate_1");
+        teammate2 = GameObject.Find("Teammate_2");
+        enemy1 = GameObject.Find("Enemy_1");
+        enemy2 = GameObject.Find("Enemy_2");
+        enemy3 = GameObject.Find("Enemy_3");
+
+        teammate1.SetActive(2 <= level);
+        teammate2.SetActive(3 <= level);
+        enemy1.SetActive(1 <= level);
+        enemy2.SetActive(2 <= level);
+        enemy3.SetActive(3 <= level);
+
         rotationCar = car.GetComponent<Rigidbody>().transform.rotation;
     }
 	
@@ -77,5 +121,23 @@ public class GameController : MonoBehaviour {
         scoreboard.GetComponent<Scoreboard>().SetTimePaused(false);
         scoreboard.GetComponent<Scoreboard>().SetGoalMsg("");
         scoreboard.GetComponent<Scoreboard>().SetMoreTime(9);
+    }
+
+    private void SetModelRivals(int model) {
+        if (model == 1) {
+            enemy1.GetComponentInChildren<MeshRenderer>().material = mat1;
+            enemy2.GetComponentInChildren<MeshRenderer>().material = mat1;
+            enemy3.GetComponentInChildren<MeshRenderer>().material = mat1;
+        }
+        else if (model == 2) {
+            enemy1.GetComponentInChildren<MeshRenderer>().material = mat2;
+            enemy2.GetComponentInChildren<MeshRenderer>().material = mat2;
+            enemy3.GetComponentInChildren<MeshRenderer>().material = mat2;
+        }
+        else if (model == 3) {
+            enemy1.GetComponentInChildren<MeshRenderer>().material = mat3;
+            enemy2.GetComponentInChildren<MeshRenderer>().material = mat3;
+            enemy3.GetComponentInChildren<MeshRenderer>().material = mat3;
+        }
     }
 }
