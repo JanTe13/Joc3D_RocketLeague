@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour {
     }
 
     private void RestartPositions() { 
-        Vector3 positionBall = new Vector3 ( -6.59f, 7.8f, -1.9f );
+        Vector3 positionBall = new Vector3 ( -6.59f, 27.5f, -1.9f );
         Vector3 positionCar = new Vector3(-245.5f, 0.5f, -1.9f);
         Vector3 positionTeam1 = new Vector3(-245.5f, 0.5f, 34.5f);
         Vector3 positionTeam2 = new Vector3(-245.5f, 0.5f, -42.5f);
@@ -141,7 +141,8 @@ public class GameController : MonoBehaviour {
         enemy1.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionEnemy1, Quaternion.Euler(0.0f, -90.0f, 0.0f));
         enemy2.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionEnemy2, Quaternion.Euler(0.0f, -90.0f, 0.0f));
         enemy3.GetComponent<Rigidbody>().transform.SetPositionAndRotation(positionEnemy3, Quaternion.Euler(0.0f, -90.0f, 0.0f));
-
+        ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
     }
 
     private void RestartGamePositions() {
