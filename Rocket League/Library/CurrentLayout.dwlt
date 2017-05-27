@@ -464,7 +464,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -553,23 +553,23 @@ MonoBehaviour:
     height: 421
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7a290000
-    m_LastClickedID: 10618
-    m_ExpandedIDs: e4fbffff000000003029000052290000202b0000
+    m_SelectedIDs: 542b0000
+    m_LastClickedID: 11092
+    m_ExpandedIDs: dac5ffffe4fbffff0000000052290000002d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: bomb1
-      m_OriginalName: bomb1
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10618
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 7}
     m_SearchString: 
@@ -605,14 +605,14 @@ MonoBehaviour:
     width: 411
     height: 421
   m_SceneLighting: 1
-  lastFramingTime: 770.6544243898996
+  lastFramingTime: 346.90886545826214
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -276.62323, y: 23.789276, z: -2.524222}
+    m_Target: {x: 224.88239, y: 162.175, z: -163.82336}
     speed: 2
-    m_Value: {x: -276.62323, y: 23.789276, z: -2.524222}
+    m_Value: {x: 224.88239, y: 162.175, z: -163.82336}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -637,11 +637,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.15387268, y: -0.7105495, z: 0.16398135, w: 0.6667479}
     speed: 2
-    m_Value: {x: 0.15387268, y: -0.7105495, z: 0.16398135, w: 0.6667479}
+    m_Value: {x: -0.15387268, y: 0.7105495, z: -0.16398135, w: -0.6667479}
   m_Size:
-    m_Target: 94.62943
+    m_Target: 22
     speed: 2
-    m_Value: 94.62943
+    m_Value: 22
   m_Ortho:
     m_Target: 0
     speed: 2

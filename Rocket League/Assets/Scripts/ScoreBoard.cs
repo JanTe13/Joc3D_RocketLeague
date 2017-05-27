@@ -12,6 +12,9 @@ public class Scoreboard : MonoBehaviour {
     public Text Home;
     public Text Goal_msg;
     public Text Restart_msg;
+	public AudioSource win;
+	public AudioSource lose;
+	public AudioSource explosion;
 
     private bool end_game;
     private bool time_paused;
@@ -39,6 +42,8 @@ public class Scoreboard : MonoBehaviour {
             int score = int.Parse(Guest.text);
             Guest.text = (score + 1).ToString();
             Goal_msg.text = "Ouch! It was GOAL...";
+			lose.Play ();
+			explosion.Play ();
             updated = true;
         }
         else if (team.Equals("home"))
@@ -46,6 +51,8 @@ public class Scoreboard : MonoBehaviour {
             int score = int.Parse(Home.text);
             Home.text = (score + 1).ToString();
             Goal_msg.text = "GOAL!";
+			win.Play ();
+			explosion.Play ();
             updated = true;
         }
         return updated;
@@ -70,10 +77,13 @@ public class Scoreboard : MonoBehaviour {
             StopCoroutine("LoseTime");
             end_game = true;
             Goal_msg.text = "Times Up! ";
-            if (int.Parse(Home.text) > int.Parse(Guest.text))
-                Goal_msg.text += "You've won!";
-            else if (int.Parse(Home.text) < int.Parse(Guest.text))
-                Goal_msg.text += "You've lost...";
+			if (int.Parse (Home.text) > int.Parse (Guest.text)) {
+				win.Play ();
+				Goal_msg.text += "You've won!";
+			} else if (int.Parse (Home.text) < int.Parse (Guest.text)) {
+				lose.Play ();
+				Goal_msg.text += "You've lost...";
+			}
             else
                 Goal_msg.text += "It was a tie";
             Restart_msg.text = "Press 'R' to go to the Menu";
