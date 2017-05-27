@@ -7,7 +7,10 @@ public class Car : MonoBehaviour {
 	public float maxTorque;
 	public float jumpHeight;
 	public float maxBrake;
+	public float maxPitch;
 	public Transform centerOfMass;
+	public AudioSource ground;
+	public AudioSource jump;
 
 	public WheelCollider[] wheelColliders = new WheelCollider[4];
 	public Transform[] tireMeshes = new Transform[4];
@@ -16,7 +19,10 @@ public class Car : MonoBehaviour {
 	private Rigidbody rigidBody;
 	private string state;
 	private float t;
-
+	private float t1;
+	private float t2;
+	private AudioSource audioSource;
+	private bool jumpCar;
 	// Use this for initialization
 	void Start()
 	{
@@ -25,14 +31,34 @@ public class Car : MonoBehaviour {
 		m = GameObject.FindGameObjectWithTag("Movement").GetComponent<Movement> ();
 		state = "static";
 		t = Time.time - 2.5f;
+		audioSource = GetComponent<AudioSource> ();
+		jumpCar = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		UpdateMeshesPositions();
-		if (Input.GetKeyDown (KeyCode.Space) && m.Grounded(wheelColliders))
-  			m.Jump (jumpHeight,rigidBody);
+		UpdateMeshesPositions ();
+		if (Input.GetKeyDown (KeyCode.Space) && m.Grounded (wheelColliders)) {
+			t1 = Time.time;
+			m.Jump (jumpHeight, rigidBody);
+			jump.Play ();
+			jumpCar = true;
+		} else if (m.Grounded (wheelColliders) && jumpCar) {
+			if (Time.time - t1 > 1) {
+				jump.Stop ();
+				t2 = Time.time; 
+				ground.Play ();
+				jumpCar = false;
+			}
+		} else { 
+			if (Time.time - t2 > 1) {
+				ground.Stop ();
+			}
+		}
+		AccelerationAudio ();
 	}
+
+
 
 	void FixedUpdate () {
 		float directionAngle = Input.GetAxis("Horizontal");
@@ -82,6 +108,13 @@ public class Car : MonoBehaviour {
 
 	public void Jump() {
 		m.Jump (jumpHeight,rigidBody);
+	}
+
+	private void AccelerationAudio() {
+		float rpm = Mathf.Abs(wheelColliders[0].rpm) / 60;
+
+		if (rpm > 5000) audioSource.pitch = 1.65f;
+		else audioSource.pitch = maxPitch + rpm/4000;
 	}
 
 
