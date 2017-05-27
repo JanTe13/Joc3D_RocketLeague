@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class IA_Local : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public GameObject teammate1, teammate2;
 	
 	// Update is called once per frame
 	void Update () {

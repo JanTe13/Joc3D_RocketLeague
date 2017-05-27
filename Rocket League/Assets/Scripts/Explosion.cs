@@ -24,7 +24,7 @@ public class Explosion : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision coll) {
-		if (coll.gameObject.tag == "Ball") {
+		if (coll.gameObject.tag == "Player") {
             Explode ();
             goal = true;
 		}		
