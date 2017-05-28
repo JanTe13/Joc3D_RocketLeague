@@ -32,6 +32,7 @@ public class CamMove : MonoBehaviour
     public GameObject pointLight;
 
 	private bool CameraBall;
+	private Vector3 offset;
 
 	void Start() {
 		CameraBall = false;
@@ -57,54 +58,69 @@ public class CamMove : MonoBehaviour
 
     void LateUpdate()
     {
-		if (!CameraBall) {
+		if (!Pared ()) {
+			if (!CameraBall) {
 
-			// Early out if we don't have a target
-			if (!target)
-				return;
+				// Early out if we don't have a target
+				if (!target)
+					return;
 
-			// Calculate the current rotation angles
+				// Calculate the current rotation angles
 
-			float wantedRotationAngle = target.eulerAngles.y;
-			float wantedHeight = target.position.y + height;
-			float currentRotationAngle = transform.eulerAngles.y;
-			float currentHeight = transform.position.y;
+				float wantedRotationAngle = target.eulerAngles.y;
+				float wantedHeight = target.position.y + height;
+				float currentRotationAngle = transform.eulerAngles.y;
+				float currentHeight = transform.position.y;
 
-			// Damp the rotation around the y-axis
-			currentRotationAngle = Mathf.LerpAngle (currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
+				// Damp the rotation around the y-axis
+				currentRotationAngle = Mathf.LerpAngle (currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
 
-			// Damp the height
-			currentHeight = Mathf.Lerp (currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+				// Damp the height
+				currentHeight = Mathf.Lerp (currentHeight, wantedHeight, heightDamping * Time.deltaTime);
 
-			// Convert the angle into a rotation
-			Quaternion currentRotation = Quaternion.Euler (0, currentRotationAngle, 0);
+				// Convert the angle into a rotation
+				Quaternion currentRotation = Quaternion.Euler (0, currentRotationAngle, 0);
 
 
-			// Set the position of the camera on the x-z plane to:
-			// distance meters behind the target
+				// Set the position of the camera on the x-z plane to:
+				// distance meters behind the target
 
-			var v3T = sphere.position - target.position;
-			//transform.position = sphere.position + v3T.normalized * distance;
-			transform.position = target.position;
-			transform.position -= currentRotation * Vector3.forward * distance + v3T.normalized * (distance - 14);
+				var v3T = sphere.position - target.position;
+				//transform.position = sphere.position + v3T.normalized * distance;
+				transform.position = target.position;
+				transform.position -= currentRotation * Vector3.forward * distance + v3T.normalized * (distance - 14);
 
-			// Set the height of the camera
+				// Set the height of the camera
 
-			transform.position = new Vector3 (transform.position.x, currentHeight, transform.position.z);
+				transform.position = new Vector3 (transform.position.x, currentHeight, transform.position.z);
 
-			// Always look at the target
-			transform.LookAt (target);
+				// Always look at the target
+				transform.LookAt (target);
 
+			} else {
+
+				/*
+				var v3T = sphere.position - target.position;
+				transform.position = target.position + v3T.normalized * (distance);
+				transform.LookAt (sphere);*/
+
+				transform.position = new Vector3 (-337, 110, -146);
+				transform.rotation = Quaternion.Euler (30, 65, 0);
+
+			}
 		} else {
-
-			/*
-			var v3T = sphere.position - target.position;
-			transform.position = target.position + v3T.normalized * (distance);
-			transform.LookAt (sphere);*/
-
-			transform.position = new Vector3 (-337,110,-146);
-			transform.rotation = Quaternion.Euler (30,65,0);
-
+			transform.LookAt (target);
+			if (target.position.x > 260) {
+				offset = new Vector3 (-50, 20, 0);
+			}
+			else if (target.position.z < 0) offset = new Vector3 (50,20,20);
+			else if (target.position.z > 0) offset = new Vector3 (50,20,-20);
+			transform.position = target.position + offset;		
 		}
-    }
+	}
+
+	private bool Pared() {
+		return target.position.y > 19;
+	}
+
 }
