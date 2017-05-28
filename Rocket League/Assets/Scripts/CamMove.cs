@@ -30,6 +30,7 @@ public class CamMove : MonoBehaviour
     public float heightDamping;
     public float rotationDamping;
     public GameObject pointLight;
+	public GameObject car;
 
 	private bool CameraBall;
 	private Vector3 offset;
@@ -37,6 +38,7 @@ public class CamMove : MonoBehaviour
 	void Start() {
 		CameraBall = false;
         pointLight.GetComponent<Light>().enabled = false;
+		car = GameObject.Find("Player");
     }
 
     void Update()
@@ -109,18 +111,29 @@ public class CamMove : MonoBehaviour
 
 			}
 		} else {
-			transform.LookAt (target);
-			if (target.position.x > 260) {
-				offset = new Vector3 (-50, 20, 0);
+			if (!CameraBall) {
+				transform.LookAt (target);
+				if (target.position.x > 260) {
+					offset = new Vector3 (-50, 20, 0);
+				} else if (target.position.z < 0)
+					offset = new Vector3 (50, 20, 20);
+				else if (target.position.z > 0)
+					offset = new Vector3 (50, 20, -20);
+				transform.position = target.position + offset;
+			} else {
+				transform.position = new Vector3 (-337, 110, -146);
+				transform.rotation = Quaternion.Euler (30, 65, 0);
 			}
-			else if (target.position.z < 0) offset = new Vector3 (50,20,20);
-			else if (target.position.z > 0) offset = new Vector3 (50,20,-20);
-			transform.position = target.position + offset;		
 		}
 	}
 
 	private bool Pared() {
-		return target.position.y > 19;
+		if (target.position.y > 19)
+			return true;
+		else if (car.GetComponent<Car> ().Ground () && target.position.y > 2)
+			return true;
+		else
+			return false;
 	}
 
 }

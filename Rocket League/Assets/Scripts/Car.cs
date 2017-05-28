@@ -110,6 +110,10 @@ public class Car : MonoBehaviour {
 		m.Jump (jumpHeight,rigidBody);
 	}
 
+	public bool Ground() {
+		return m.Grounded (wheelColliders);
+	}
+
 	private void AccelerationAudio() {
 		float rpm = Mathf.Abs(wheelColliders[0].rpm) / 60;
 		if (rpm > 5000) audioSource.pitch = 1.60f;
