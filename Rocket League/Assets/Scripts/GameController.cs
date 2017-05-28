@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour {
     }
 
     private void RestartPositions() { 
-        Vector3 positionBall = new Vector3 ( -6.59f, 27.5f, -1.9f );
+        Vector3 positionBall = new Vector3 ( -6.59f, 7.8f, -1.9f );
         Vector3 positionCar = new Vector3(-245.5f, 0.5f, -1.9f);
         Vector3 positionTeam1 = new Vector3(-245.5f, 0.5f, 34.5f);
         Vector3 positionTeam2 = new Vector3(-245.5f, 0.5f, -42.5f);
