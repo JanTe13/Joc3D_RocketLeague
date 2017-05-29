@@ -70,6 +70,10 @@ public class GameController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(0);
+        if (Input.GetKeyDown(KeyCode.T)) {
+            Vector3 middle = new Vector3(-6.59f, 0.5f, -1.9f);
+            car.GetComponent<Rigidbody>().transform.SetPositionAndRotation(middle, Quaternion.Euler(0.0f, 90.0f, 0.0f));
+        }
         if (home.GetComponent<Explosion>().GetGoal()) {
             if (Mathf.Abs(car.GetComponent<Transform>().position.x - home.GetComponent<Transform>().position.x) < 150)
                 car.GetComponent<Car>().Jump();

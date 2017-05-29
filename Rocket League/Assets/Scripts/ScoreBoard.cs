@@ -77,15 +77,20 @@ public class Scoreboard : MonoBehaviour {
             StopCoroutine("LoseTime");
             end_game = true;
             Goal_msg.text = "Times Up! ";
-			if (int.Parse (Home.text) > int.Parse (Guest.text)) {
-				win.Play ();
-				Goal_msg.text += "You've won!";
-			} else if (int.Parse (Home.text) < int.Parse (Guest.text)) {
-				lose.Play ();
-				Goal_msg.text += "You've lost...";
-			}
-            else
+            if (int.Parse(Home.text) > int.Parse(Guest.text))
+            {
+                win.Play();
+                Goal_msg.text += "You've won!";
+            }
+            else if (int.Parse(Home.text) < int.Parse(Guest.text))
+            {
+                lose.Play();
+                Goal_msg.text += "You've lost...";
+            }
+            else {
+                win.Play();
                 Goal_msg.text += "It was a tie";
+            }
             Restart_msg.text = "Press 'R' to go to the Menu";
         }
 

@@ -2,49 +2,42 @@ Initialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 740M (ID=0x1292)
+    Renderer: NVIDIA GeForce GT 820M (ID=0x1140)
     Vendor:   NVIDIA
-    VRAM:     2020 MB
-    Driver:   21.21.13.7682
+    VRAM:     1999 MB
+    Driver:   21.21.13.7654
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.282 seconds
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.037 seconds
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 4.029773 ms
-Setting up 4 worker threads for Enlighten.
-  Thread -> id: 29f0 -> priority: 1 
-  Thread -> id: cb64 -> priority: 1 
-  Thread -> id: a8dc -> priority: 1 
-  Thread -> id: 364c -> priority: 1 
+UnloadTime: 2.540269 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: b9b8 -> priority: 1 
+  Thread -> id: b9b4 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.865539 ms
+UnloadTime: 2.526057 ms
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 922.
-Total: 2.060003 ms (FindLiveObjects: 0.151389 ms CreateObjectMapping: 0.095366 ms MarkObjects: 0.998569 ms  DeleteObjects: 0.812968 ms)
+Total: 0.996764 ms (FindLiveObjects: 0.098689 ms CreateObjectMapping: 0.052502 ms MarkObjects: 0.490684 ms  DeleteObjects: 0.354098 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.432637 ms
+UnloadTime: 1.087953 ms
 
 Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 432.
-Total: 2.525290 ms (FindLiveObjects: 0.074411 ms CreateObjectMapping: 0.065430 ms MarkObjects: 1.024656 ms  DeleteObjects: 1.359936 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.582463 ms
-
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 923.
-Total: 1.853019 ms (FindLiveObjects: 0.135993 ms CreateObjectMapping: 0.089807 ms MarkObjects: 0.807408 ms  DeleteObjects: 0.818099 ms)
+Total: 2.537900 ms (FindLiveObjects: 0.076583 ms CreateObjectMapping: 0.069082 ms MarkObjects: 0.882284 ms  DeleteObjects: 1.507976 ms)
 

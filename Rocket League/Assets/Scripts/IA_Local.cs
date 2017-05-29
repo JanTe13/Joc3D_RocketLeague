@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IA_Local : MonoBehaviour {
 
+    public float maxTorque;
     public GameObject camMove, goal;
     private Vector3 posPilota, posGoalAtac;
 
@@ -35,7 +36,7 @@ public class IA_Local : MonoBehaviour {
     void FixedUpdate() {
         GameObject pilota = GameObject.Find("ball");
         if (pilota != null)
-            posPilota = GameObject.Find("ball").GetComponent<Transform>().position;
+            posPilota = pilota.GetComponent<Transform>().position;
         Vector3 posTeammate1 = GetComponent<Transform>().position;
         Vector3 puntImpacteXut = PuntImpacteXut(posPilota, posGoalAtac);
         float angleAPuntImpacte = AngleAPuntImpacte(puntImpacteXut, posTeammate1);
@@ -53,7 +54,7 @@ public class IA_Local : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        m.Accelerate(1000.0f, wheelColliders, -1);
+        m.Accelerate(20000, wheelColliders, -1);
     }
 
     private Vector3 PuntImpacteXut(Vector3 pilota, Vector3 porteria) {
@@ -64,12 +65,6 @@ public class IA_Local : MonoBehaviour {
             primer = (pilota.z - porteria.z) / (pilota.x - porteria.x);
             segon = (-(pilota.z - porteria.z) * porteria.x / (pilota.x - porteria.x) + porteria.z);
             punt.x = x; punt.y = pilota.y; punt.z = (primer * x + segon);
-		/*	if (porteria.x > punt.x) {
-				if (punt.z > 0)
-					punt.z += 10;
-				else if (punt.z <= 0)
-					punt.z -= 10;
-			} */
         }
         return punt;
     }

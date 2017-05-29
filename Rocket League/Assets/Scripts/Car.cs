@@ -63,7 +63,7 @@ public class Car : MonoBehaviour {
 		float directionAcc = Input.GetAxis("Vertical");
 		float steer;
 		float rpm = Mathf.Abs(wheelColliders[0].rpm) / 60;
-		if (rpm < 2000) steer = 8f; 
+		if (rpm < 2000) steer = 5f; 
 		else steer = 3f;
 		m.Rotate (steer, wheelColliders, directionAngle);
 		if (state == "static") {
