@@ -120,5 +120,11 @@ public class Car : MonoBehaviour {
 		else audioSource.pitch = maxPitch + rpm/4000;
 	}
 
+	private void OnCollisionEnter(Collision collision) {
+		if (!(wheelColliders [0].isGrounded || wheelColliders [1].isGrounded || wheelColliders [2].isGrounded || wheelColliders [3].isGrounded)) {
+			rigidBody.AddForce (2,0,2);
+		}
+	}
+
 
 }

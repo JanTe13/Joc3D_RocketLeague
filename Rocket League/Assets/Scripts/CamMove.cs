@@ -113,7 +113,7 @@ public class CamMove : MonoBehaviour
 		} else {
 			if (!CameraBall) {
 				//transform.LookAt (target);
-				if (target.position.x > 260) {
+				if (target.position.x > 240) {
 					offset = new Vector3 (-50, 20, 0);
 				} else if (target.position.z < 0)
 					offset = new Vector3 (50, 20, 20);
@@ -152,6 +152,8 @@ public class CamMove : MonoBehaviour
 			return true;
 		else if (car.GetComponent<Car> ().Ground () && target.position.y > 1.5)
 			return true;
+	//	else if (car.GetComponent<Car> ().Ground () && target.position.y > 0 && )
+	//		return true;
 		else
 			return false;
 	}

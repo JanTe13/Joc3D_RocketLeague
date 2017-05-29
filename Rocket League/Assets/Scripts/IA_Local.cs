@@ -64,6 +64,12 @@ public class IA_Local : MonoBehaviour {
             primer = (pilota.z - porteria.z) / (pilota.x - porteria.x);
             segon = (-(pilota.z - porteria.z) * porteria.x / (pilota.x - porteria.x) + porteria.z);
             punt.x = x; punt.y = pilota.y; punt.z = (primer * x + segon);
+		/*	if (porteria.x > punt.x) {
+				if (punt.z > 0)
+					punt.z += 10;
+				else if (punt.z <= 0)
+					punt.z -= 10;
+			} */
         }
         return punt;
     }
