@@ -18,7 +18,6 @@ public class Car : MonoBehaviour {
 	private Movement m;
 	private Rigidbody rigidBody;
 	private string state;
-	private float t;
 	private float t1;
 	private float t2;
 	private AudioSource audioSource;
@@ -30,7 +29,6 @@ public class Car : MonoBehaviour {
 		rigidBody.centerOfMass = centerOfMass.localPosition;
 		m = GameObject.FindGameObjectWithTag("Movement").GetComponent<Movement> ();
 		state = "static";
-		t = Time.time - 2.5f;
 		audioSource = GetComponent<AudioSource> ();
 		jumpCar = false;
 	}
@@ -63,11 +61,14 @@ public class Car : MonoBehaviour {
 	void FixedUpdate () {
 		float directionAngle = Input.GetAxis("Horizontal");
 		float directionAcc = Input.GetAxis("Vertical");
-		float steer = 5f;
+		float steer;
+		float rpm = Mathf.Abs(wheelColliders[0].rpm) / 60;
+		if (rpm < 2000) steer = 8f; 
+		else steer = 3f;
 		m.Rotate (steer, wheelColliders, directionAngle);
 		if (state == "static") {
 			if (directionAcc == -1) {
-				if (Time.time - 2.5 >= t) {
+				if (wheelColliders[0].rpm <= 0) {
 					maxBrake = 0;
 					maxTorque /= 2;
 					state = "backward";
@@ -88,7 +89,6 @@ public class Car : MonoBehaviour {
 				maxBrake = 80000;
 				maxTorque /= 2;
 				state = "static";
-				t = Time.time;
 			}
 		}
 		m.Accelerate (maxTorque,wheelColliders,directionAcc);
@@ -110,10 +110,13 @@ public class Car : MonoBehaviour {
 		m.Jump (jumpHeight,rigidBody);
 	}
 
+	public bool Ground() {
+		return m.Grounded (wheelColliders);
+	}
+
 	private void AccelerationAudio() {
 		float rpm = Mathf.Abs(wheelColliders[0].rpm) / 60;
-
-		if (rpm > 5000) audioSource.pitch = 1.65f;
+		if (rpm > 5000) audioSource.pitch = 1.60f;
 		else audioSource.pitch = maxPitch + rpm/4000;
 	}
 

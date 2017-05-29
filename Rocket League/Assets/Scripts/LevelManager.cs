@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
     public Transform mainMenu, choiseMenu, levelMenu;
+	public AudioSource music;
+
+	void Start() {
+		music.Play ();
+	}
 
     public void LoadSceneGame (string name) {
 		SceneManager.LoadScene (name);
+		music.Stop ();
 	}
 
 	public void QuitGame () {
@@ -18,6 +24,7 @@ public class LevelManager : MonoBehaviour {
         choiseMenu.gameObject.SetActive(clicked);
         levelMenu.gameObject.SetActive(!clicked);
         mainMenu.gameObject.SetActive(!clicked);
+		if (!music.isPlaying) music.Play ();
     }
 
     public void ChoseCar1() {
@@ -39,18 +46,21 @@ public class LevelManager : MonoBehaviour {
         choiseMenu.gameObject.SetActive(false);
         levelMenu.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
+		if (!music.isPlaying) music.Play ();
     }
 
     public void GoBackChoiseMenu(bool clicked) {
         choiseMenu.gameObject.SetActive(true);
         levelMenu.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(false);
+		if (!music.isPlaying) music.Play ();
     }
 
     private void GoToLevelMenu(bool clicked) {
         choiseMenu.gameObject.SetActive(!clicked);
         levelMenu.gameObject.SetActive(clicked);
         mainMenu.gameObject.SetActive(!clicked);
+		if (!music.isPlaying) music.Play ();
     }
 
     public void ChoseLevel1() {

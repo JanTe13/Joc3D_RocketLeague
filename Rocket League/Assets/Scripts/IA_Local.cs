@@ -39,7 +39,7 @@ public class IA_Local : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        posPilota = GameObject.Find("ball").GetComponent<Transform>().position;
+        //posPilota = GameObject.Find("ball").GetComponent<Transform>().position;
         Vector3 posTeammate1 = teammate1.GetComponent<Transform>().position;
         float carRotY = teammate1.GetComponent<Transform>().rotation.eulerAngles.y;
         

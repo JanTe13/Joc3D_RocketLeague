@@ -107,7 +107,7 @@ public class GameController : MonoBehaviour {
         if (scoreboard.GetComponent<Scoreboard>().GetCarStoped()) {
             car.GetComponent<Car>().enabled = false;
             teammate1.GetComponent<IA_Local>().enabled = false;
-            teammate2.GetComponent<IA_Local>().enabled = false;
+            //teammate2.GetComponent<IA_Local>().enabled = false;
             enemy1.GetComponent<IA_Visitant>().enabled = false;
             enemy2.GetComponent<IA_Visitant>().enabled = false;
             enemy3.GetComponent<IA_Visitant>().enabled = false;
@@ -117,7 +117,7 @@ public class GameController : MonoBehaviour {
         else {
             car.GetComponent<Car>().enabled = true;
             teammate1.GetComponent<IA_Local>().enabled = true;
-            teammate2.GetComponent<IA_Local>().enabled = true;
+            //teammate2.GetComponent<IA_Local>().enabled = true;
             enemy1.GetComponent<IA_Visitant>().enabled = true;
             enemy2.GetComponent<IA_Visitant>().enabled = true;
             enemy3.GetComponent<IA_Visitant>().enabled = true;

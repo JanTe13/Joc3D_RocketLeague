@@ -2,11 +2,12 @@ Initialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 820M (ID=0x1140)
+    Renderer: NVIDIA GeForce GT 740M (ID=0x1292)
     Vendor:   NVIDIA
-    VRAM:     1999 MB
-    Driver:   21.21.13.7654
+    VRAM:     2020 MB
+    Driver:   21.21.13.7682
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll (this message is harmless)
@@ -20,11 +21,26 @@ Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_le
 - Completed reload, in  0.033 seconds
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
+=======
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.255 seconds
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Edgar\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
+>>>>>>> origin/master
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
-XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
+<<<<<<< HEAD
 UnloadTime: 1.897602 ms
 Setting up 2 worker threads for Enlighten.
   Thread -> id: 77e8 -> priority: 1 
@@ -1540,4 +1556,23 @@ UnloadTime: 2.770808 ms
 
 Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 429.
 Total: 2.500793 ms (FindLiveObjects: 0.067108 ms CreateObjectMapping: 0.071451 ms MarkObjects: 0.922550 ms  DeleteObjects: 1.438499 ms)
+=======
+UnloadTime: 3.945097 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1c64 -> priority: 1 
+  Thread -> id: 88b8 -> priority: 1 
+  Thread -> id: 8724 -> priority: 1 
+  Thread -> id: 83d8 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.202249 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 925.
+Total: 2.463708 ms (FindLiveObjects: 0.156948 ms CreateObjectMapping: 0.094511 ms MarkObjects: 1.002846 ms  DeleteObjects: 1.208547 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.207971 ms
+
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 433.
+Total: 2.550521 ms (FindLiveObjects: 0.066286 ms CreateObjectMapping: 0.070990 ms MarkObjects: 0.957514 ms  DeleteObjects: 1.454875 ms)
+>>>>>>> origin/master
 
