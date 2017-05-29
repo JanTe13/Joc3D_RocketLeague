@@ -112,14 +112,34 @@ public class CamMove : MonoBehaviour
 			}
 		} else {
 			if (!CameraBall) {
-				transform.LookAt (target);
+				//transform.LookAt (target);
 				if (target.position.x > 260) {
 					offset = new Vector3 (-50, 20, 0);
 				} else if (target.position.z < 0)
 					offset = new Vector3 (50, 20, 20);
 				else if (target.position.z > 0)
 					offset = new Vector3 (50, 20, -20);
+				//transform.position = new Vector3 (0 ,0 , 0);
+				//transform.position = target.position + offset;
+				// Calculate the current rotation angles
+				float wantedRotationAngle = target.eulerAngles.y;
+				float wantedHeight = target.position.y + height;
+				float currentRotationAngle = transform.eulerAngles.y;
+				float currentHeight = transform.position.y;
+				// Damp the rotation around the y-axis
+				currentRotationAngle = Mathf.LerpAngle (currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
+				// Damp the height
+				currentHeight = Mathf.Lerp (currentHeight, wantedHeight, heightDamping * Time.deltaTime);
+				// Convert the angle into a rotation
+				Quaternion currentRotation = Quaternion.Euler (0, currentRotationAngle, 0);
+				// Set the position of the camera on the x-z plane to:
+				// distance meters behind the target
 				transform.position = target.position + offset;
+				transform.position -= currentRotation * Vector3.forward * (distance-30);
+				// Set the height of the camera
+				transform.position = new Vector3 (transform.position.x, currentHeight, transform.position.z);
+				// Always look at the target
+				transform.LookAt (target);
 			} else {
 				transform.position = new Vector3 (-337, 110, -146);
 				transform.rotation = Quaternion.Euler (30, 65, 0);
@@ -130,7 +150,7 @@ public class CamMove : MonoBehaviour
 	public bool Pared() {
 		if (target.position.y > 19)
 			return true;
-		else if (car.GetComponent<Car> ().Ground () && target.position.y > 2)
+		else if (car.GetComponent<Car> ().Ground () && target.position.y > 1.5)
 			return true;
 		else
 			return false;
