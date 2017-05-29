@@ -127,7 +127,7 @@ public class CamMove : MonoBehaviour
 		}
 	}
 
-	private bool Pared() {
+	public bool Pared() {
 		if (target.position.y > 19)
 			return true;
 		else if (car.GetComponent<Car> ().Ground () && target.position.y > 2)
