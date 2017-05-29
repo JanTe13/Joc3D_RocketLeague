@@ -99,6 +99,11 @@ public class Scoreboard : MonoBehaviour {
 
 	}
 
+    public int GetTime()
+    {
+        return timeLeft;
+    }
+
     public bool GetEndGame() {
         return end_game;
     }
@@ -121,6 +126,11 @@ public class Scoreboard : MonoBehaviour {
 
     public void SetMoreTime(int sec) {
         timeLeft += sec;
+    }
+
+    public void SetLessTime(int sec)
+    {
+        timeLeft -= sec;
     }
 
     public bool GetCarStoped() {

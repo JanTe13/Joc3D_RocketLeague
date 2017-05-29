@@ -17,7 +17,7 @@ Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket Leagu
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.033 seconds
+- Completed reload, in  0.025 seconds
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -25,13 +25,19 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.661537 ms
+UnloadTime: 1.480343 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: ba7c -> priority: 1 
-  Thread -> id: b670 -> priority: 1 
+  Thread -> id: b864 -> priority: 1 
+  Thread -> id: b5f4 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.252885 ms
+UnloadTime: 2.848970 ms
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 922.
-Total: 1.004264 ms (FindLiveObjects: 0.115664 ms CreateObjectMapping: 0.053292 ms MarkObjects: 0.402653 ms  DeleteObjects: 0.431865 ms)
+Total: 0.873599 ms (FindLiveObjects: 0.078162 ms CreateObjectMapping: 0.035528 ms MarkObjects: 0.372257 ms  DeleteObjects: 0.387257 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.980974 ms
+
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 462.
+Total: 1.181116 ms (FindLiveObjects: 0.039475 ms CreateObjectMapping: 0.026448 ms MarkObjects: 0.430681 ms  DeleteObjects: 0.684116 ms)
 
