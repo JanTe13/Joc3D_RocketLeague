@@ -53,10 +53,6 @@ public class IA_Local : MonoBehaviour {
 
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        m.Accelerate(20000, wheelColliders, -1);
-    }
-
     private Vector3 PuntImpacteXut(Vector3 pilota, Vector3 porteria) {
         float primer, segon;
         float x = pilota.x - 5;

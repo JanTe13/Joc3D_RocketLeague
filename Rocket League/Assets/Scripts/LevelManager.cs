@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
-    public Transform mainMenu, choiseMenu, levelMenu;
+    public Transform mainMenu, choiseMenu, levelMenu, instructions;
 	public AudioSource music;
 
 	void Start() {
@@ -22,9 +22,18 @@ public class LevelManager : MonoBehaviour {
 
     public void ChoiseMenu (bool clicked) {
         choiseMenu.gameObject.SetActive(clicked);
+        instructions.gameObject.SetActive(!clicked);
         levelMenu.gameObject.SetActive(!clicked);
         mainMenu.gameObject.SetActive(!clicked);
 		if (!music.isPlaying) music.Play ();
+    }
+
+    public void GoToInstr(bool clicked) {
+        choiseMenu.gameObject.SetActive(false);
+        instructions.gameObject.SetActive(true);
+        levelMenu.gameObject.SetActive(false);
+        mainMenu.gameObject.SetActive(false);
+        if (!music.isPlaying) music.Play();
     }
 
     public void ChoseCar1() {
@@ -45,6 +54,7 @@ public class LevelManager : MonoBehaviour {
     public void GoBackMainMenu(bool clicked) {
         choiseMenu.gameObject.SetActive(false);
         levelMenu.gameObject.SetActive(false);
+        instructions.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
 		if (!music.isPlaying) music.Play ();
     }
@@ -52,6 +62,7 @@ public class LevelManager : MonoBehaviour {
     public void GoBackChoiseMenu(bool clicked) {
         choiseMenu.gameObject.SetActive(true);
         levelMenu.gameObject.SetActive(false);
+        instructions.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(false);
 		if (!music.isPlaying) music.Play ();
     }
@@ -59,6 +70,7 @@ public class LevelManager : MonoBehaviour {
     private void GoToLevelMenu(bool clicked) {
         choiseMenu.gameObject.SetActive(!clicked);
         levelMenu.gameObject.SetActive(clicked);
+        instructions.gameObject.SetActive(!clicked);
         mainMenu.gameObject.SetActive(!clicked);
 		if (!music.isPlaying) music.Play ();
     }

@@ -17,7 +17,7 @@ Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket Leagu
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.037 seconds
+- Completed reload, in  0.033 seconds
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Jan\Documents\GitHub\Joc3D_RocketLeague\Rocket League\rocket_league_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -25,19 +25,13 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.540269 ms
+UnloadTime: 1.661537 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: b9b8 -> priority: 1 
-  Thread -> id: b9b4 -> priority: 1 
+  Thread -> id: ba7c -> priority: 1 
+  Thread -> id: b670 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.526057 ms
+UnloadTime: 2.252885 ms
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 922.
-Total: 0.996764 ms (FindLiveObjects: 0.098689 ms CreateObjectMapping: 0.052502 ms MarkObjects: 0.490684 ms  DeleteObjects: 0.354098 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.087953 ms
-
-Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 432.
-Total: 2.537900 ms (FindLiveObjects: 0.076583 ms CreateObjectMapping: 0.069082 ms MarkObjects: 0.882284 ms  DeleteObjects: 1.507976 ms)
+Total: 1.004264 ms (FindLiveObjects: 0.115664 ms CreateObjectMapping: 0.053292 ms MarkObjects: 0.402653 ms  DeleteObjects: 0.431865 ms)
 
